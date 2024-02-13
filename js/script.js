@@ -40,23 +40,29 @@ for (const members of teamMembers) {
     //creo un elemento HTML per ogni membro del team
     const card = document.createElement("div");
     card.classList.add("card");
-
-    //creo un elemento per il nome per ogni membro
-    const name = document.createElement("h2");
-    name.textContent = members.nome;
-    card.appendChild(name);
-
-    //creo un elemento per il ruolo per ogni membro
-    const role = document.createElement("span");
-    role.textContent = members.ruolo;
-    card.appendChild(role);
-    console.log(role);
-
+    
     //creo un elemento per l'immagine per ogni membro
     const img = document.createElement("img");
     img.src = `../img/${members.foto}`;
     img.alt = members.nome;
+    img.classList.add("card-img-top");
     card.appendChild(img);
+
+    //creo un elemento HTML per aggiungere una stilizzazione di bootstrap
+    const cardBody = document.createElement("div");
+    cardBody.classList.add("card-body");
+    card.appendChild(cardBody);
+
+    //creo un elemento per il nome per ogni membro
+    const name = document.createElement("h2");
+    name.textContent = members.nome;
+    name.classList.add("card-title");
+    cardBody.appendChild(name);
+
+    //creo un elemento per il ruolo per ogni membro
+    const role = document.createElement("span");
+    role.textContent = members.ruolo;
+    cardBody.appendChild(role);
 
     //aggiungo la card al container
     const container = document.getElementById("team-members");
