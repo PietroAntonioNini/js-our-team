@@ -40,11 +40,25 @@ for (const members of teamMembers) {
     //creo un elemento HTML per ogni membro del team
     const card = document.createElement("div");
     card.classList.add("card");
-    console.log(card);
 
     //creo un elemento per il nome per ogni membro
     const name = document.createElement("h2");
     name.textContent = members.nome;
     card.appendChild(name);
-    console.log(name);
+
+    //creo un elemento per il ruolo per ogni membro
+    const role = document.createElement("span");
+    role.textContent = members.ruolo;
+    card.appendChild(role);
+    console.log(role);
+
+    //creo un elemento per l'immagine per ogni membro
+    const img = document.createElement("img");
+    img.src = `../img/${members.foto}`;
+    img.alt = members.nome;
+    card.appendChild(img);
+
+    //aggiungo la card al container
+    const container = document.getElementById("team-members");
+    container.appendChild(card);
 }
