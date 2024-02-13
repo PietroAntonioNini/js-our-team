@@ -34,4 +34,17 @@ const teamMembers = [
     },
 ];
 
-console.log(teamMembers);
+//con ciclo for creo una lista a cui aggiungo i membri e le proprie info
+for (const members of teamMembers) {
+
+    //creo un elemento HTML per ogni membro del team
+    const card = document.createElement("div");
+    card.classList.add("card");
+    console.log(card);
+
+    //creo un elemento per il nome per ogni membro
+    const name = document.createElement("h2");
+    name.textContent = members.nome;
+    card.appendChild(name);
+    console.log(name);
+}
